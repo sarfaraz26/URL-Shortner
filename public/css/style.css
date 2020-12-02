@@ -1,0 +1,26 @@
+body
+{
+    background-color: burlywood;
+}
+
+.code
+{
+    font-size: 10rem;
+    line-height: 120px;
+}
+
+.page
+{
+    line-height: 60px;
+}
+
+nav
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav a 
+{
+    flex: 2;
+}
