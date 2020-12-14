@@ -49,11 +49,18 @@
 
 
 
-        <% if(data!=""){ %>
-        <h5 class="text-dark mt-4 font-weight-bold">Short URL :</h5>
-        <span id="clicked" class="text-primary" data-toggle="tooltip" data-placement="bottom"
-            title="Click to copy link"><a href=<%= data %> id="getText" onclick="copyFun()"><%= data %></a></span>
-        <% } %>
+        <% if(data!="" ){ %>
+            <h5 class="text-dark mt-4 font-weight-bold">Short URL</h5>
+            <span class="text-primary"
+                title="Click to copy link">
+                <p id="getText" class="font-weight-bold" style="color : rgb(111, 111, 250)">
+                    <%= data %>
+                    <br>
+                    <small class="text-dark" style="line-height: 1px;">(Copy & paste the link to the browser)</small>
+                </p>
+
+            </span>
+            <% } %>
 
     </div>
 
@@ -75,27 +82,7 @@
         crossorigin="anonymous"></script>
 
     <script>
-        $(document).ready(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-
-        function copyFun()
-        {
-            let copyText = document.querySelector('#getText').text;
-
-            var textarea = document.createElement("textarea");
-            textarea.value = copyText;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand("copy");
-            document.body.removeChild(textarea);
-        }
-
-        let pText = document.getElementById('clicked');
-
-        pText.addEventListener('click',function(){
-            alert("Link Copied");
-        })
+        
 
     </script>
 
