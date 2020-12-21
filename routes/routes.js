@@ -23,16 +23,6 @@ router.get('/about',(req,res)=>{
     res.render('about');
 });
 
-router.get('/:shorturl',async(req,res)=>{
-    const getUrl = await dbModel.findOne({short : req.params.shorturl});
-    let longAdd = getUrl.longurl;
-    
-    if(longAdd!="")
-    {
-    res.redirect(longAdd);
-    }
-});
-
 router.get('*',(req,res)=>{
     res.render('404');
 });
